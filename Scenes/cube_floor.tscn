@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://o0crcuiikq4r"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gx8en"]
+load_path = "res://.godot/imported/Sprite-0002.png-6a9e9b7d63ba899bb9f536f35dd719ed.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=2024631767]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=567545944]
+texture_filter = 1
+texture = SubResource("CompressedTexture2D_gx8en")
