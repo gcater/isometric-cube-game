@@ -9,19 +9,19 @@ var grid_pos := Vector2i.ZERO
 func _process(delta):
 
 	if Input.is_action_just_pressed("ui_left"):
-		sprite.play("bottom_left")
+		sprite.play("top_left")
 		try_move(Vector2i(-1, 0))
 
 	elif Input.is_action_just_pressed("ui_right"):
-		sprite.play("top_right")
+		sprite.play("bottom_right")
 		try_move(Vector2i(1, 0))
 
 	elif Input.is_action_just_pressed("ui_up"):
-		sprite.play("top_left")
+		sprite.play("top_right")
 		try_move(Vector2i(0, -1))
 
 	elif Input.is_action_just_pressed("ui_down"):
-		sprite.play("bottom_right")
+		sprite.play("bottom_left")
 		try_move(Vector2i(0, 1))
 
 

@@ -71,7 +71,6 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=425083450]
 texture_filter = 1
-position = Vector2(-5, -1)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3smsa")
-frame_progress = 0.53185576
+animation = &"top_right"
