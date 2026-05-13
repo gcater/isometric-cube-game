@@ -9,4 +9,6 @@ func _ready():
 
 	player.grid_pos = Vector2i(3, 3)
 
-	player.position = game_floor.grid_to_iso(player.grid_pos)
+	player.snap_to_grid()
+
+	print("WORLD SET PLAYER TO: ", player.grid_pos)

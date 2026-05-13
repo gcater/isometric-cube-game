@@ -6,6 +6,9 @@ var game_floor
 var grid_pos := Vector2i.ZERO
 
 
+func _ready():
+	sprite.position = Vector2(0, -48)
+
 func _process(delta):
 
 	if Input.is_action_just_pressed("ui_left"):
@@ -26,6 +29,7 @@ func _process(delta):
 
 
 func try_move(dir: Vector2i):
+	
 
 	if game_floor == null:
 		return
@@ -36,5 +40,11 @@ func try_move(dir: Vector2i):
 		return
 
 	grid_pos = next_pos
+	
+	snap_to_grid()
+	print(grid_pos)
 
-	position = game_floor.grid_to_iso(grid_pos)
+
+func snap_to_grid():
+
+	position = game_floor.position + game_floor.grid_to_iso(grid_pos)

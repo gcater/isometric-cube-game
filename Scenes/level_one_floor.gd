@@ -8,10 +8,11 @@ const TILE_W := 96
 const TILE_H := 48
 
 var blocks := {}
-var grid_origin := Vector2(500, 200)
+
 
 func _ready():
 	generate_floor()
+	
 
 func generate_floor():
 	for x in range(width):
@@ -30,4 +31,4 @@ func grid_to_iso(grid_pos: Vector2i) -> Vector2:
 	return Vector2(
 		(grid_pos.x - grid_pos.y) * TILE_W / 2,
 		(grid_pos.x + grid_pos.y) * TILE_H / 2
-	) + grid_origin
+	) 

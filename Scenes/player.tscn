@@ -73,4 +73,3 @@ script = ExtResource("1_cvnsp")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3smsa")
-animation = &"top_right"
