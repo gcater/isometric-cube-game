@@ -1,27 +1,13 @@
 [gd_scene format=3 uid="uid://bl1fyn6h2e6sk"]
 
-[ext_resource type="PackedScene" uid="uid://o0crcuiikq4r" path="res://Scenes/cube_floor.tscn" id="1_go701"]
+[ext_resource type="Script" uid="uid://bw26jojexpap7" path="res://Scripts/world.gd" id="1_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://c2upfdv08n3km" path="res://Scenes/level_one_floor.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://c7dmg8g8ws0dj" path="res://Scenes/player.tscn" id="2_5a7ea"]
 
 [node name="World" type="Node2D" unique_id=276078537]
+script = ExtResource("1_5a7ea")
 
-[node name="Node2D" parent="." unique_id=2024631767 instance=ExtResource("1_go701")]
-position = Vector2(58, 46)
-
-[node name="Node2D2" parent="." unique_id=1787531719 instance=ExtResource("1_go701")]
-position = Vector2(46, 52)
-
-[node name="Node2D3" parent="." unique_id=119453404 instance=ExtResource("1_go701")]
-position = Vector2(35, 58)
-
-[node name="Node2D4" parent="." unique_id=232623843 instance=ExtResource("1_go701")]
-position = Vector2(70, 52)
-
-[node name="Node2D5" parent="." unique_id=1577010281 instance=ExtResource("1_go701")]
-position = Vector2(58, 58)
-
-[node name="Node2D6" parent="." unique_id=1574929219 instance=ExtResource("1_go701")]
-position = Vector2(46, 64)
+[node name="Floor" parent="." unique_id=983164780 instance=ExtResource("1_go701")]
 
 [node name="Player" parent="." unique_id=1630648783 instance=ExtResource("2_5a7ea")]
-position = Vector2(51, 41)
+position = Vector2(627, 298)
