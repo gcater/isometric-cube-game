@@ -11,19 +11,19 @@ func _ready():
 
 func _process(delta):
 
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("left"):
 		sprite.play("top_left")
 		try_move(Vector2i(-1, 0))
 
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("right"):
 		sprite.play("bottom_right")
 		try_move(Vector2i(1, 0))
 
-	elif Input.is_action_just_pressed("ui_up"):
+	elif Input.is_action_just_pressed("up"):
 		sprite.play("top_right")
 		try_move(Vector2i(0, -1))
 
-	elif Input.is_action_just_pressed("ui_down"):
+	elif Input.is_action_just_pressed("down"):
 		sprite.play("bottom_left")
 		try_move(Vector2i(0, 1))
 
