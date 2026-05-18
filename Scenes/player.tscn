@@ -3,15 +3,11 @@
 [ext_resource type="Script" uid="uid://36ytd1rblxs0" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b3j1et7bdcob3" path="res://assets/player_faces_01.png" id="2_cvnsp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("2_cvnsp")
 region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
-atlas = ExtResource("2_cvnsp")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("2_cvnsp")
 region = Rect2(0, 0, 24, 24)
 
@@ -19,28 +15,16 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("2_cvnsp")
 region = Rect2(0, 24, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_cvnsp")
+region = Rect2(24, 0, 24, 24)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
 atlas = ExtResource("2_cvnsp")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3smsa"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6t5aa")
-}],
-"loop": true,
-"name": &"bottom_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vgqql")
-}],
-"loop": true,
-"name": &"bottom_right",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkybt")
@@ -51,10 +35,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x3wgy")
 }],
 "loop": true,
-"name": &"top_left",
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}],
+"loop": true,
+"name": &"right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -62,7 +62,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3smsa")
 }],
 "loop": true,
-"name": &"top_right",
+"name": &"up",
 "speed": 5.0
 }]
 
@@ -73,3 +73,4 @@ script = ExtResource("1_cvnsp")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3smsa")
+animation = &"right"
