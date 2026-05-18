@@ -42,7 +42,6 @@ func try_move(dir: Vector2i):
 	grid_pos = next_pos
 	
 	snap_to_grid()
-	print(grid_pos)
 
 
 func snap_to_grid():
