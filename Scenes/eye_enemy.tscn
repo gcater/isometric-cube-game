@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cofaxhpbl21gt"]
+[gd_scene format=3 uid="uid://bmslgbgoqllp6"]
 
 [ext_resource type="Texture2D" uid="uid://c4mqvgbaflqq1" path="res://assets/eye_enemy_01.png" id="1_11m80"]
-[ext_resource type="Script" uid="uid://dbejdjt4d2xjy" path="res://Scenes/eye_enemy.gd" id="1_rdt02"]
+[ext_resource type="Script" uid="uid://dbejdjt4d2xjy" path="res://Scripts/eye_enemy.gd" id="1_rdt02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dlqn"]
 atlas = ExtResource("1_11m80")
