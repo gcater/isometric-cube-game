@@ -14,10 +14,10 @@ func _ready():
 
 func _process(delta):
 	pass
-	# move_timer += delta
-	# if move_timer >= move_interval:
-	# 	move_timer = 0.0
-	# 	move_one_tile()
+	move_timer += delta
+	if move_timer >= move_interval:
+		move_timer = 0.0
+		move_one_tile()
 	
 
 func move_one_tile():
