@@ -1,31 +1,38 @@
 extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
+@export var move_delay := 0.15
 
 var game_floor
 var grid_pos := Vector2i.ZERO
-
+var move_timer := 0.0
 
 func _ready():
 	sprite.position = Vector2(0, -48)
 
 func _process(delta):
-
-	if Input.is_action_just_pressed("left"):
+	move_timer -= delta
+	if move_timer > 0:
+		return 
+	if Input.is_action_pressed("left"):
 		sprite.play("left")
 		try_move(Vector2i(-1, 0))
+		move_timer = move_delay
 
-	elif Input.is_action_just_pressed("right"):
+	elif Input.is_action_pressed("right"):
 		sprite.play("right")
 		try_move(Vector2i(1, 0))
+		move_timer = move_delay
 
-	elif Input.is_action_just_pressed("up"):
+	elif Input.is_action_pressed("up"):
 		sprite.play("up")
 		try_move(Vector2i(0, -1))
+		move_timer = move_delay
 
-	elif Input.is_action_just_pressed("down"):
+	elif Input.is_action_pressed("down"):
 		sprite.play("down")
 		try_move(Vector2i(0, 1))
+		move_timer = move_delay
 
 
 func try_move(dir: Vector2i):
