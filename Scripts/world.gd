@@ -1,8 +1,8 @@
 extends Node2D
 
 @onready var game_floor = $Floor
-@onready var player = $Player
-@onready var eye_enemy = $EyeEnemy
+@onready var player = $Entities/Player
+@onready var eye_enemy = $Entities/EyeEnemy
 
 func _ready():
 

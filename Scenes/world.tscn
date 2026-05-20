@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bw26jojexpap7" path="res://Scripts/world.gd" id="1_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://c2upfdv08n3km" path="res://Scenes/level_one_floor.tscn" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://c7dmg8g8ws0dj" path="res://Scenes/player.tscn" id="2_5a7ea"]
-[ext_resource type="PackedScene" uid="uid://cofaxhpbl21gt" path="res://Scenes/eye_enemy.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://sclm6kcce42l" path="res://Scenes/eye_enemy.tscn" id="4_8j60k"]
 
 [node name="World" type="Node2D" unique_id=276078537]
 script = ExtResource("1_5a7ea")
@@ -11,7 +11,10 @@ script = ExtResource("1_5a7ea")
 [node name="Floor" parent="." unique_id=983164780 instance=ExtResource("1_go701")]
 position = Vector2(500, 200)
 
-[node name="EyeEnemy" parent="." unique_id=2078786244 instance=ExtResource("4_8j60k")]
-position = Vector2(-4, 146)
+[node name="Entities" type="Node2D" parent="." unique_id=246831073]
+y_sort_enabled = true
 
-[node name="Player" parent="." unique_id=1630648783 instance=ExtResource("2_5a7ea")]
+[node name="EyeEnemy" parent="Entities" unique_id=2078786244 instance=ExtResource("4_8j60k")]
+position = Vector2(-436, 24)
+
+[node name="Player" parent="Entities" unique_id=1630648783 instance=ExtResource("2_5a7ea")]
