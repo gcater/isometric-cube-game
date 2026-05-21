@@ -12,12 +12,12 @@ func setup(floor_ref, start_pos: Vector2i, direction: Vector2i):
 	game_floor = floor_ref
 	grid_pos = start_pos
 	dir = direction
-	
+
 	snap_to_grid()
 
 
 func _process(delta):
-	print("bullet at:", grid_pos)
+	#print("bullet at:", grid_pos)
 	move_timer += delta
 
 	if move_timer >= move_interval:
@@ -27,13 +27,23 @@ func _process(delta):
 
 func move_one_tile():
 	var next_pos := grid_pos + dir
-	
+
 	if not game_floor.blocks.has(next_pos):
 		queue_free()
 		return
 
 	grid_pos = next_pos
 	snap_to_grid()
+	if game_floor.entities.has(grid_pos):
+		var other = game_floor.entities[grid_pos]
+		if other.is_in_group("player"):
+			print("bullet hit player")
+			game_floor.handle_collision(self, other)
+			queue_free()	
+			return
+		
+
+		
 
 
 func snap_to_grid():

@@ -1,16 +1,24 @@
 extends Node2D
 
-@onready var game_floor = $Floor
+@export var eye_enemy_scene: PackedScene
+
+@onready var game_floor = $Level_One_Floor
 @onready var player = $Entities/Player
-@onready var eye_enemy = $Entities/EyeEnemy
+@onready var entities_node = $Entities
 
 func _ready():
 
-	player.game_floor = game_floor
-	eye_enemy.game_floor = game_floor
-	player.grid_pos = Vector2i(3, 3)
-	eye_enemy.grid_pos = Vector2i(5, 5)
-	player.snap_to_grid()
-	eye_enemy.snap_to_grid()
-
+	player.setup(game_floor, Vector2i(3, 3))
+	spawn_enemy(Vector2i(3, 0))
+	spawn_enemy(Vector2i(3, 2))
+	spawn_enemy(Vector2i(5, 5))
 	# print("WORLD SET PLAYER TO: ", player.grid_pos)
+
+
+func spawn_enemy(pos: Vector2i):
+
+	var enemy = eye_enemy_scene.instantiate()
+
+	entities_node.add_child(enemy)
+
+	enemy.setup(game_floor, pos)

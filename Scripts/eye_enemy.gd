@@ -16,6 +16,15 @@ var shoot_timer := 0.0
 func _ready():
 	sprite.position = Vector2(0, -48)
 
+func setup(floor_ref, start_pos: Vector2i):
+	game_floor = floor_ref
+	grid_pos = start_pos
+
+	game_floor.add_entity(self, grid_pos)
+
+	snap_to_grid()
+
+
 func _process(delta):
 	
 	move_timer += delta
@@ -25,7 +34,7 @@ func _process(delta):
 	if shoot_timer >= shoot_interval:
 		shoot_timer = 0.0
 		shoot()
-	rotate_clockwise()
+	
 	if move_timer >= move_interval:
 		move_timer = 0.0
 		#move_one_tile()
@@ -41,16 +50,17 @@ func shoot():
 	bullet.setup(game_floor, start_pos, facing_dir)
 
 func move_one_tile():
-	var next_pos := grid_pos + facing_dir
-
-	if not game_floor.blocks.has(next_pos):
+	if game_floor == null:
 		return
 
-	grid_pos = next_pos
-	snap_to_grid()
+	var next_pos := grid_pos + facing_dir
+
+	if game_floor.move_entity(self, grid_pos, next_pos):
+		grid_pos = next_pos
+		snap_to_grid()
+
+
 
 func snap_to_grid():
 	position = game_floor.position + game_floor.grid_to_iso(grid_pos)
 
-func rotate_clockwise():
-	facing_dir = Vector2i(-facing_dir.y, facing_dir.x)
