@@ -34,6 +34,9 @@ func move_one_tile():
 
 	grid_pos = next_pos
 	snap_to_grid()
+	var block = game_floor.blocks[grid_pos]
+	block.flash_red()
+
 	if game_floor.entities.has(grid_pos):
 		var other = game_floor.entities[grid_pos]
 		if other.is_in_group("player"):

@@ -1,11 +1,25 @@
 extends Node2D
 var grid_pos := Vector2i.ZERO
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var sprite = $Sprite2D
+
+var timer := 0.0
+var active := false
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if active:
+		timer -= delta
+
+		if timer <= 0:
+			sprite.modulate = Color.WHITE
+			active = false
+
+func flash_red():
+	
+	sprite.modulate = Color.RED
+
+	timer = 0.25
+	active = true
