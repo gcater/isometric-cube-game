@@ -21,5 +21,5 @@ func flash_red():
 	
 	sprite.modulate = Color.RED
 
-	timer = 0.25
+	timer = 0.5
 	active = true

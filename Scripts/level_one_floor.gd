@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var block_scene: PackedScene
-@export var width := 8
-@export var height := 8
+@export var width := 16
+@export var height := 16
 
 const TILE_W := 96
 const TILE_H := 48

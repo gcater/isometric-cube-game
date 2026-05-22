@@ -12,6 +12,9 @@ func _ready():
 	spawn_enemy(Vector2i(3, 0))
 	spawn_enemy(Vector2i(3, 2))
 	spawn_enemy(Vector2i(5, 5))
+	spawn_enemy(Vector2i(10, 13))
+	spawn_enemy(Vector2i(7, 15))
+	spawn_enemy(Vector2i(12, 9))
 	# print("WORLD SET PLAYER TO: ", player.grid_pos)
 
 

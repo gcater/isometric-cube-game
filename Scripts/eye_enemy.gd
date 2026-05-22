@@ -54,7 +54,16 @@ func _process(delta):
 	if move_timer >= move_interval:
 		move_timer = 0.0
 		#move_one_tile()
-		rotate_clockwise()
+		var choice = randi() % 3
+
+		match choice:
+			0:
+				rotate_clockwise()
+			1:
+				rotate_counterclockwise()
+			2:
+				pass
+		
 		shoot()
 		
 

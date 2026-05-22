@@ -1,7 +1,10 @@
 extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
+@onready var camera = $Camera2D
 @export var move_delay := 0.15
+
+
 
 var game_floor
 var grid_pos := Vector2i.ZERO
@@ -10,6 +13,8 @@ var move_timer := 0.0
 func _ready():
 	add_to_group("player")
 	sprite.position = Vector2(0, -48)
+	camera.position_smoothing_enabled = true
+	camera.position_smoothing_speed = 5.0
 
 func setup(floor_ref, start_pos):
 	game_floor = floor_ref

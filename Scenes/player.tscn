@@ -74,3 +74,5 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3smsa")
 animation = &"right"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1641896411]
