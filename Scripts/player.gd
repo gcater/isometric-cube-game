@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
+@export var move_speed := 12.0
 @export var move_delay := 0.15
 
 
@@ -9,6 +10,7 @@ extends Node2D
 var game_floor
 var grid_pos := Vector2i.ZERO
 var move_timer := 0.0
+var target_position := Vector2.ZERO
 
 func _ready():
 	add_to_group("player")
@@ -21,10 +23,12 @@ func setup(floor_ref, start_pos):
 	grid_pos = start_pos
 
 	game_floor.add_entity(self, grid_pos)
-
-	snap_to_grid()
+	target_position = game_floor.position + game_floor.grid_to_iso(grid_pos)
+	position = target_position
+	
 
 func _process(delta):
+	position = position.lerp(target_position, move_speed * delta)
 	move_timer -= delta
 	if move_timer > 0:
 		return 
@@ -65,4 +69,4 @@ func try_move(dir: Vector2i):
 
 func snap_to_grid():
 
-	position = game_floor.position + game_floor.grid_to_iso(grid_pos)
+	target_position = game_floor.position + game_floor.grid_to_iso(grid_pos)
