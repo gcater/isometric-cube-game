@@ -9,12 +9,15 @@ extends Node2D
 func _ready():
 
 	player.setup(game_floor, Vector2i(3, 3))
-	spawn_enemy(Vector2i(3, 0))
-	spawn_enemy(Vector2i(3, 2))
+	# for i in range(game_floor.height):
+	# 	for j in range(game_floor.width):
+	# 		spawn_enemy(Vector2i(i,j))
+	#spawn_enemy(Vector2i(3, 0))
+	# spawn_enemy(Vector2i(3, 2))
 	spawn_enemy(Vector2i(5, 5))
-	spawn_enemy(Vector2i(10, 13))
-	spawn_enemy(Vector2i(7, 15))
-	spawn_enemy(Vector2i(12, 9))
+	# spawn_enemy(Vector2i(10, 13))
+	# spawn_enemy(Vector2i(7, 15))
+	# spawn_enemy(Vector2i(12, 9))
 	# print("WORLD SET PLAYER TO: ", player.grid_pos)
 
 

@@ -45,24 +45,20 @@ func _process(delta):
 	move_timer += delta
 
 	shoot_timer += delta
-
-	# if shoot_timer >= shoot_interval:
-	# 	shoot_timer = 0.0
-		
-		
 	
 	if move_timer >= move_interval:
 		move_timer = 0.0
 		#move_one_tile()
-		var choice = randi() % 3
+		# var choice = randi() % 3
 
-		match choice:
-			0:
-				rotate_clockwise()
-			1:
-				rotate_counterclockwise()
-			2:
-				pass
+		# match choice:
+		# 	0:
+		# 		rotate_clockwise()
+		# 	1:
+		# 		rotate_counterclockwise()
+		# 	2:
+		# 		pass
+		rotate_clockwise()
 		
 		shoot()
 		
