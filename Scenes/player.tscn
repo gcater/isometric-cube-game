@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7dmg8g8ws0dj"]
 
 [ext_resource type="Script" uid="uid://36ytd1rblxs0" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://b7g0vwsiyko0m" path="res://Scenes/AttackTile.tscn" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://b3j1et7bdcob3" path="res://assets/player_faces_01.png" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
@@ -68,6 +69,7 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1630648783]
 script = ExtResource("1_cvnsp")
+attack_tile_scene = ExtResource("2_6t5aa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=425083450]
 texture_filter = 1

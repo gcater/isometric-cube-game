@@ -28,6 +28,7 @@ var shoot_timer := 0.0
 
 
 func _ready():
+	add_to_group("enemy")
 	sprite.position = Vector2(0, -48)
 
 func setup(floor_ref, start_pos: Vector2i):

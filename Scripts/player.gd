@@ -1,5 +1,6 @@
 extends Node2D
 
+@export var attack_tile_scene: PackedScene
 @onready var sprite = $AnimatedSprite2D
 @onready var camera = $Camera2D
 @export var move_speed := 12.0
@@ -11,6 +12,7 @@ var game_floor
 var grid_pos := Vector2i.ZERO
 var move_timer := 0.0
 var target_position := Vector2.ZERO
+var facing_dir := Vector2i(0, 1)
 
 func _ready():
 	add_to_group("player")
@@ -52,6 +54,8 @@ func _process(delta):
 		try_move(Vector2i(0, 1))
 		move_timer = move_delay
 
+	if Input.is_action_just_pressed("attack"):
+		shoot_attack_tile()
 
 func try_move(dir: Vector2i):
 
@@ -70,3 +74,10 @@ func try_move(dir: Vector2i):
 func snap_to_grid():
 
 	target_position = game_floor.position + game_floor.grid_to_iso(grid_pos)
+
+func shoot_attack_tile():
+	var attack = attack_tile_scene.instantiate()
+	get_parent().add_child(attack)
+	var start_pos := grid_pos - facing_dir
+
+	attack.setup(game_floor, start_pos, facing_dir)

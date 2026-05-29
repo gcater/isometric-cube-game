@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b7g0vwsiyko0m"]
+
+[ext_resource type="Script" uid="uid://cj3kk45iuugfp" path="res://Scenes/attack_tile.gd" id="1_jrnuo"]
+
+[node name="AttackTile" type="Node2D" unique_id=2136092993]
+script = ExtResource("1_jrnuo")
