@@ -5,6 +5,7 @@ var grid_pos := Vector2i.ZERO
 
 var timer := 0.0
 var active := false
+var is_selected := false
 
 
 
@@ -14,7 +15,11 @@ func _process(delta: float) -> void:
 		timer -= delta
 
 		if timer <= 0:
-			sprite.modulate = Color.WHITE
+			if is_selected:
+				sprite.modulate = Color.RED
+			else:
+				sprite.modulate = Color.WHITE
+
 			active = false
 
 func flash_red():
@@ -23,3 +28,11 @@ func flash_red():
 
 	timer = 0.5
 	active = true
+
+func set_selected(selected: bool):
+	is_selected = selected
+
+	if selected:
+		sprite.modulate = Color.RED
+	else:
+		sprite.modulate = Color.WHITE

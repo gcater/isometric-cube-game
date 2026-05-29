@@ -16,9 +16,16 @@ func setup(floor_ref, start_pos: Vector2i, direction: Vector2i):
 	grid_pos = start_pos
 	dir = direction
 
+	if dir == Vector2i.ZERO:
+		queue_free()
+		return
+
+	
 	flash_current_block()
 	snap_to_grid()
-
+	if check_hit():
+		return
+	
 
 func _process(delta):
 	move_timer += delta
@@ -37,15 +44,8 @@ func move_one_tile():
 
 	grid_pos = next_pos
 	steps += 1
-
-	if game_floor.entities.has(next_pos):
-		var other = game_floor.entities[next_pos]
-
-		if other.is_in_group("enemy"):
-			game_floor.remove_entity(next_pos)
-			other.queue_free()
-			queue_free()
-			return
+	
+	check_hit()
 
 	flash_current_block()
 	snap_to_grid()
@@ -62,4 +62,15 @@ func flash_current_block():
 
 
 func snap_to_grid():
-	position = game_floor.grid_to_iso(grid_pos)
+	position = game_floor.position + game_floor.grid_to_iso(grid_pos)
+
+func check_hit() -> bool:
+	if game_floor.entities.has(grid_pos):
+		var other = game_floor.entities[grid_pos]
+		if other.is_in_group("enemy"):
+			game_floor.remove_entity(grid_pos)
+			other.queue_free()
+			queue_free()
+			return true
+
+	return false

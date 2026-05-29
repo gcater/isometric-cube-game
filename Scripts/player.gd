@@ -7,24 +7,26 @@ extends Node2D
 @export var move_delay := 0.15
 
 
-# const DIRS_8 := [
-# 	Vector2i(0, -1),
-# 	Vector2i(1, -1),
-# 	Vector2i(1, 0),
-# 	Vector2i(1, 1),
-# 	Vector2i(0, 1),
-# 	Vector2i(-1, 1),
-# 	Vector2i(-1, 0),
-# 	Vector2i(-1, -1),
-# ]
+const DIRS_8 : Array[Vector2i] = [
+	Vector2i(0, -1),
+	Vector2i(1, -1),
+	Vector2i(1, 0),
+	Vector2i(1, 1),
+	Vector2i(0, 1),
+	Vector2i(-1, 1),
+	Vector2i(-1, 0),
+	Vector2i(-1, -1),
+]
 
+#var attack_tile
 var game_floor
 var grid_pos := Vector2i.ZERO
 var move_timer := 0.0
 var target_position := Vector2.ZERO
 var facing_dir := Vector2i(1, 0) # Default facing right
 var attack_index := 2
-#var attack_dir : Vector2i  = DIRS_8[attack_index]
+var previous_attack_pos := Vector2i.ZERO
+
 
 
 func _ready():
@@ -40,6 +42,8 @@ func setup(floor_ref, start_pos):
 
 	game_floor.add_entity(self, grid_pos)
 	snap_to_grid()	
+	previous_attack_pos = get_attack_pos()
+	update_attack_selector()
 	
 
 func _process(delta):
@@ -47,6 +51,14 @@ func _process(delta):
 		shoot_attack_tile()
 	position = position.lerp(target_position, move_speed * delta)
 	move_timer -= delta
+	if Input.is_action_just_pressed("rotate_attack_cw"):
+		attack_index = (attack_index - 1 + DIRS_8.size()) % DIRS_8.size()
+		update_attack_selector()
+
+	if Input.is_action_just_pressed("rotate_attack_ccw"):
+			attack_index = (attack_index + 1) % DIRS_8.size()
+			update_attack_selector()
+
 	if move_timer > 0:
 		return 
 	if Input.is_action_pressed("left"):
@@ -86,6 +98,7 @@ func try_move(dir: Vector2i):
 	if game_floor.move_entity(self, grid_pos, next_pos):
 		grid_pos = next_pos
 		snap_to_grid()
+		update_attack_selector()
 		print(grid_pos)
 
 
@@ -94,16 +107,40 @@ func snap_to_grid():
 	target_position = game_floor.position + game_floor.grid_to_iso(grid_pos)
 
 func shoot_attack_tile():
-	var attack = attack_tile_scene.instantiate()
-	get_parent().add_child(attack)
-	var start_pos := grid_pos - facing_dir
+	var attack_dir := get_attack_dir()
+	var attack_pos := get_attack_pos()
+	var attack_tile = attack_tile_scene.instantiate()
+	get_parent().add_child(attack_tile)
 
-	attack.setup(game_floor, start_pos, facing_dir)
 
-# func update_attack_tile():
-# 	attack_dir = DIRS_8[attack_index]
+	attack_tile.setup(game_floor, attack_pos, attack_dir)
 
-# 	var attack_pos = grid_pos + attack_dir
+func get_attack_dir() -> Vector2i:
+	return DIRS_8[attack_index]
 
-# 	attack_tile.grid_pos = attack_pos
-# 	attack_tile.snap_to_grid()
+func get_attack_pos() -> Vector2i:
+	return grid_pos + get_attack_dir()
+
+func update_attack_selector():
+	var old_block = game_floor.blocks.get(previous_attack_pos)
+	if old_block:
+		old_block.set_selected(false)
+
+	var attack_pos := get_attack_pos()
+
+	var new_block = game_floor.blocks.get(attack_pos)
+	if new_block:
+		new_block.set_selected(true)
+
+	previous_attack_pos = attack_pos
+	check_selected_tile_hit()
+
+func check_selected_tile_hit():
+	var attack_pos := get_attack_pos()
+
+	if game_floor.entities.has(attack_pos):
+		var other = game_floor.entities[attack_pos]
+
+		if other.is_in_group("enemy"):
+			game_floor.remove_entity(attack_pos)
+			other.queue_free()
