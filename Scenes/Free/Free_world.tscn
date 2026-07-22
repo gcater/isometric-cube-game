@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://peyn23nlmp0x"]
+
+[ext_resource type="PackedScene" uid="uid://cnhvw2hitm56g" path="res://Scenes/Free/free_level_01_floor.tscn" id="1_pcbif"]
+[ext_resource type="PackedScene" uid="uid://bu8qlpmwyvu8r" path="res://Scenes/Free/Character.tscn" id="2_7g23b"]
+
+[node name="World" type="Node2D" unique_id=1345142544]
+
+[node name="free_level_01_floor" parent="." unique_id=522940570 instance=ExtResource("1_pcbif")]
+
+[node name="Character" parent="." unique_id=306595147 instance=ExtResource("2_7g23b")]
+
+[node name="Camera2D" type="Camera2D" parent="Character" unique_id=1453029856]

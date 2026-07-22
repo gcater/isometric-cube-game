@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7dmg8g8ws0dj"]
 
-[ext_resource type="Script" uid="uid://36ytd1rblxs0" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://36ytd1rblxs0" path="res://Scripts/Coord/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b3j1et7bdcob3" path="res://assets/player_faces_01.png" id="2_cvnsp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
@@ -69,10 +69,10 @@ animations = [{
 [node name="Player" type="Node2D" unique_id=1630648783]
 script = ExtResource("1_cvnsp")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1641896411]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=425083450]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_3smsa")
 animation = &"right"
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1641896411]

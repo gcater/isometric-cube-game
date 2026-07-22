@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnhvw2hitm56g"]
+
+[ext_resource type="Script" uid="uid://dmn5m4snke8g5" path="res://Scripts/Free/free_level_01_floor.gd" id="1_hwej5"]
+[ext_resource type="PackedScene" uid="uid://o0crcuiikq4r" path="res://Scenes/Free/cube_floor.tscn" id="2_ncfrr"]
+
+[node name="free_level_01_floor" type="Node2D" unique_id=1345142544]
+script = ExtResource("1_hwej5")
+block_scene = ExtResource("2_ncfrr")

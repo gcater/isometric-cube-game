@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://sclm6kcce42l"]
 
-[ext_resource type="Script" uid="uid://dbejdjt4d2xjy" path="res://Scripts/eye_enemy.gd" id="1_rdt02"]
-[ext_resource type="PackedScene" uid="uid://cj8ipmw47lg2p" path="res://Scenes/Bullet.tscn" id="2_alhgd"]
+[ext_resource type="Script" uid="uid://dbejdjt4d2xjy" path="res://Scripts/Coord/eye_enemy.gd" id="1_rdt02"]
+[ext_resource type="PackedScene" uid="uid://cj8ipmw47lg2p" path="res://Scenes/Coord/Bullet.tscn" id="2_alhgd"]
 [ext_resource type="Texture2D" uid="uid://bhnd2h2doq8fg" path="res://assets/eye_enemy_04.png" id="3_alhgd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alhgd"]
