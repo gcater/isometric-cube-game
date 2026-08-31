@@ -18,6 +18,46 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_e",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_n",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_ne",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_nw",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_s",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_se",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_sw",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_w",
+"speed": 5.0
 }]
 
 [node name="Character" type="CharacterBody2D" unique_id=306595147]
@@ -29,3 +69,4 @@ shape = SubResource("CircleShape2D_jo2ib")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1913654922]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4b18b")
+animation = &"walk_nw"
