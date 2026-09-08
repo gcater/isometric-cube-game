@@ -2,10 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://cnhvw2hitm56g" path="res://Scenes/Free/free_level_01_floor.tscn" id="1_pcbif"]
 [ext_resource type="PackedScene" uid="uid://bu8qlpmwyvu8r" path="res://Scenes/Free/Character.tscn" id="2_7g23b"]
+[ext_resource type="PackedScene" path="res://Scenes/Free/solid_block.tscn" id="3_block"]
 
 [node name="World" type="Node2D" unique_id=1345142544]
+y_sort_enabled = true
 
 [node name="free_level_01_floor" parent="." unique_id=522940570 instance=ExtResource("1_pcbif")]
+z_index = -1
+
+[node name="SolidBlock" parent="." instance=ExtResource("3_block")]
+position = Vector2(0, 72)
+
+[node name="SolidBlock2" parent="." instance=ExtResource("3_block")]
+position = Vector2(96, 120)
+
+[node name="SolidBlock3" parent="." instance=ExtResource("3_block")]
+position = Vector2(-144, 144)
 
 [node name="Character" parent="." unique_id=306595147 instance=ExtResource("2_7g23b")]
 
