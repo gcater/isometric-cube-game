@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bu8qlpmwyvu8r"]
 
 [ext_resource type="Texture2D" uid="uid://b3j1et7bdcob3" path="res://assets/player_faces_01.png" id="1_0y7nr"]
-[ext_resource type="Script" uid="uid://bgwxfqg2sxotu" path="res://Scripts/Free/character.gd" id="1_jo2ib"]
+[ext_resource type="Script" uid="uid://bgwxfqg2sxotu" path="res://Scripts/character.gd" id="1_jo2ib"]
+[ext_resource type="Script" path="res://Scripts/slash_attack.gd" id="4_slash"]
 [ext_resource type="Texture2D" uid="uid://b5aes7t735hdh" path="res://assets/eight-dir-sprite-sheet.png" id="3_klqi5"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_base"]
@@ -45,35 +46,35 @@ region = Rect2(24, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5lyo"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(0, 0, 24, 24)
+region = Rect2(0, 48, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74bid"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(24, 24, 24, 24)
+region = Rect2(0, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0s64"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(0, 48, 24, 24)
+region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q848x"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(0, 72, 24, 24)
+region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lpjek"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(24, 0, 24, 24)
+region = Rect2(24, 72, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r7at"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(24, 72, 24, 24)
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqmli"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(24, 48, 24, 24)
+region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jc8jd"]
 atlas = ExtResource("3_klqi5")
-region = Rect2(0, 24, 24, 24)
+region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4b18b"]
 animations = [{
@@ -193,3 +194,7 @@ sprite_frames = SubResource("SpriteFrames_4b18b")
 animation = &"rotate_cw"
 frame = 4
 frame_progress = 0.6372789
+
+[node name="SlashAttack" type="Node2D" parent="."]
+z_index = 1
+script = ExtResource("4_slash")

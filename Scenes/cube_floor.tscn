@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o0crcuiikq4r"]
 
-[ext_resource type="Script" uid="uid://py68knhsqckq" path="res://Scripts/Free/cube_floor.gd" id="1_ldw1l"]
+[ext_resource type="Script" uid="uid://py68knhsqckq" path="res://Scripts/cube_floor.gd" id="1_ldw1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gx8en"]
 load_path = "res://.godot/imported/Sprite-0002.png-6a9e9b7d63ba899bb9f536f35dd719ed.ctex"
