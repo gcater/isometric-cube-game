@@ -16,6 +16,7 @@ const FACING_ANIMATIONS = [
 
 var aim_direction := Vector2(1, 1).normalized()
 var shot_cooldown := 0.0
+var require_attack_release := false
 
 
 func _ready() -> void:
@@ -46,6 +47,8 @@ func shoot_at(mouse_world_position: Vector2) -> bool:
 	get_parent().add_child(projectile)
 	projectile.launch(self, direction, sprite.global_position - global_position)
 	shot_cooldown = shot_interval
+	GameServices.play_sound("shoot")
+	GameServices.record_event("shot")
 	return true
 
 
@@ -70,7 +73,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.pause()
 
-	if Input.is_action_just_pressed("attack"):
-		slash.start(aim_direction)
+	# Menu clicks and held buttons must not fire a weapon when play resumes.
+	if require_attack_release:
+		if not Input.is_action_pressed("shoot") and not Input.is_action_pressed("attack"):
+			require_attack_release = false
+		return
+	if Input.is_action_just_pressed("attack") and slash.start(aim_direction):
+		GameServices.play_sound("slash")
+		GameServices.record_event("slash")
 	if Input.is_action_pressed("shoot"):
 		shoot_at(get_global_mouse_position())

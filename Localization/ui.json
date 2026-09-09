@@ -1,0 +1,250 @@
+{
+  "subtitle": {
+    "en": "An isometric playground",
+    "es": "Un mundo isométrico",
+    "fr": "Un monde isométrique",
+    "de": "Ein isometrischer Spielplatz",
+    "it": "Un mondo isometrico",
+    "ja": "アイソメトリックの遊び場"
+  },
+  "continue": {
+    "en": "Continue",
+    "es": "Continuar",
+    "fr": "Continuer",
+    "de": "Fortsetzen",
+    "it": "Continua",
+    "ja": "つづきから"
+  },
+  "new_game": {
+    "en": "New game",
+    "es": "Nueva partida",
+    "fr": "Nouvelle partie",
+    "de": "Neues Spiel",
+    "it": "Nuova partita",
+    "ja": "はじめから"
+  },
+  "settings": {
+    "en": "Settings",
+    "es": "Ajustes",
+    "fr": "Paramètres",
+    "de": "Einstellungen",
+    "it": "Impostazioni",
+    "ja": "設定"
+  },
+  "achievements": {
+    "en": "Achievements",
+    "es": "Logros",
+    "fr": "Succès",
+    "de": "Erfolge",
+    "it": "Obiettivi",
+    "ja": "実績"
+  },
+  "quit": {
+    "en": "Quit",
+    "es": "Salir",
+    "fr": "Quitter",
+    "de": "Beenden",
+    "it": "Esci",
+    "ja": "終了"
+  },
+  "pause": {
+    "en": "Pause",
+    "es": "Pausa",
+    "fr": "Pause",
+    "de": "Pause",
+    "it": "Pausa",
+    "ja": "一時停止"
+  },
+  "resume": {
+    "en": "Resume",
+    "es": "Reanudar",
+    "fr": "Reprendre",
+    "de": "Weiterspielen",
+    "it": "Riprendi",
+    "ja": "再開"
+  },
+  "save_menu": {
+    "en": "Save & main menu",
+    "es": "Guardar y menú principal",
+    "fr": "Sauvegarder et menu principal",
+    "de": "Speichern & Hauptmenü",
+    "it": "Salva e menu principale",
+    "ja": "保存してメインメニューへ"
+  },
+  "back": {
+    "en": "Back",
+    "es": "Volver",
+    "fr": "Retour",
+    "de": "Zurück",
+    "it": "Indietro",
+    "ja": "戻る"
+  },
+  "master": {
+    "en": "Master volume",
+    "es": "Volumen general",
+    "fr": "Volume général",
+    "de": "Gesamtlautstärke",
+    "it": "Volume generale",
+    "ja": "全体の音量"
+  },
+  "music": {
+    "en": "Music",
+    "es": "Música",
+    "fr": "Musique",
+    "de": "Musik",
+    "it": "Musica",
+    "ja": "音楽"
+  },
+  "sfx": {
+    "en": "Sound effects",
+    "es": "Efectos de sonido",
+    "fr": "Effets sonores",
+    "de": "Soundeffekte",
+    "it": "Effetti sonori",
+    "ja": "効果音"
+  },
+  "fullscreen": {
+    "en": "Fullscreen",
+    "es": "Pantalla completa",
+    "fr": "Plein écran",
+    "de": "Vollbild",
+    "it": "Schermo intero",
+    "ja": "全画面"
+  },
+  "language": {
+    "en": "Language",
+    "es": "Idioma",
+    "fr": "Langue",
+    "de": "Sprache",
+    "it": "Lingua",
+    "ja": "言語"
+  },
+  "settings_saved": {
+    "en": "Settings save automatically.",
+    "es": "Los ajustes se guardan automáticamente.",
+    "fr": "Les paramètres sont enregistrés automatiquement.",
+    "de": "Einstellungen werden automatisch gespeichert.",
+    "it": "Le impostazioni si salvano automaticamente.",
+    "ja": "設定は自動で保存されます。"
+  },
+  "controls": {
+    "en": "WASD · Move   Mouse · Aim   Click · Shoot   Space · Slash   Esc · Pause",
+    "es": "WASD · Mover   Ratón · Apuntar   Clic · Disparar   Espacio · Corte   Esc · Pausa",
+    "fr": "WASD · Bouger   Souris · Viser   Clic · Tirer   Espace · Frapper   Esc · Pause",
+    "de": "WASD · Bewegen   Maus · Zielen   Klick · Schießen   Leertaste · Hieb   Esc · Pause",
+    "it": "WASD · Muovi   Mouse · Mira   Clic · Spara   Spazio · Fendente   Esc · Pausa",
+    "ja": "WASD · 移動   マウス · 照準   クリック · 射撃   Space · 斬撃   Esc · 停止"
+  },
+  "new_confirm": {
+    "en": "Start from the spawn point? Your saved position will be replaced. Achievements stay unlocked.",
+    "es": "¿Volver al inicio? Se reemplazará tu posición guardada. Los logros se conservan.",
+    "fr": "Repartir du début ? Votre position sera remplacée. Les succès sont conservés.",
+    "de": "Am Startpunkt beginnen? Deine gespeicherte Position wird ersetzt. Erfolge bleiben erhalten.",
+    "it": "Ripartire dal punto iniziale? La posizione salvata sarà sostituita. Gli obiettivi restano sbloccati.",
+    "ja": "初期位置から始めますか？保存位置は上書きされます。実績は維持されます。"
+  },
+  "quit_confirm": {
+    "en": "Save progress and quit?",
+    "es": "¿Guardar el progreso y salir?",
+    "fr": "Sauvegarder et quitter ?",
+    "de": "Fortschritt speichern und beenden?",
+    "it": "Salvare i progressi e uscire?",
+    "ja": "進行状況を保存して終了しますか？"
+  },
+  "unlocked": {
+    "en": "Achievement unlocked",
+    "es": "Logro desbloqueado",
+    "fr": "Succès débloqué",
+    "de": "Erfolg freigeschaltet",
+    "it": "Obiettivo sbloccato",
+    "ja": "実績を解除しました"
+  },
+  "ach_welcome": {
+    "en": "First steps",
+    "es": "Primeros pasos",
+    "fr": "Premiers pas",
+    "de": "Erste Schritte",
+    "it": "Primi passi",
+    "ja": "第一歩"
+  },
+  "desc_welcome": {
+    "en": "Enter the cube world.",
+    "es": "Entra al mundo de cubos.",
+    "fr": "Entrez dans le monde des cubes.",
+    "de": "Betritt die Würfelwelt.",
+    "it": "Entra nel mondo dei cubi.",
+    "ja": "キューブの世界に入る。"
+  },
+  "ach_shot": {
+    "en": "Open fire",
+    "es": "Abre fuego",
+    "fr": "Feu !",
+    "de": "Feuer frei",
+    "it": "Apri il fuoco",
+    "ja": "射撃開始"
+  },
+  "desc_shot": {
+    "en": "Fire your first projectile.",
+    "es": "Dispara tu primer proyectil.",
+    "fr": "Tirez votre premier projectile.",
+    "de": "Feuere dein erstes Projektil ab.",
+    "it": "Spara il primo proiettile.",
+    "ja": "初めて弾を撃つ。"
+  },
+  "ach_slash": {
+    "en": "A sharp start",
+    "es": "Un comienzo afilado",
+    "fr": "Un début tranchant",
+    "de": "Scharfer Auftakt",
+    "it": "Un inizio affilato",
+    "ja": "最初の一振り"
+  },
+  "desc_slash": {
+    "en": "Perform your first slash.",
+    "es": "Realiza tu primer corte.",
+    "fr": "Effectuez votre première attaque de mêlée.",
+    "de": "Führe deinen ersten Hieb aus.",
+    "it": "Esegui il primo fendente.",
+    "ja": "初めて斬撃を放つ。"
+  },
+  "ach_hit": {
+    "en": "On target",
+    "es": "En el blanco",
+    "fr": "Dans le mille",
+    "de": "Volltreffer",
+    "it": "A segno",
+    "ja": "命中"
+  },
+  "desc_hit": {
+    "en": "Hit a block with a shot or slash.",
+    "es": "Golpea un bloque con un disparo o corte.",
+    "fr": "Touchez un bloc avec un tir ou une attaque.",
+    "de": "Triff einen Block mit einem Schuss oder Hieb.",
+    "it": "Colpisci un blocco con un tiro o un fendente.",
+    "ja": "射撃か斬撃をブロックに当てる。"
+  },
+  "stats": {
+    "en": "Shots: %d   Slashes: %d   Hits: %d",
+    "es": "Disparos: %d   Cortes: %d   Impactos: %d",
+    "fr": "Tirs : %d   Attaques : %d   Impacts : %d",
+    "de": "Schüsse: %d   Hiebe: %d   Treffer: %d",
+    "it": "Tiri: %d   Fendenti: %d   Colpi: %d",
+    "ja": "射撃: %d   斬撃: %d   命中: %d"
+  },
+  "save_failed": {
+    "en": "Could not save. Check available disk space and folder permissions.",
+    "es": "No se pudo guardar. Revisa el espacio y los permisos.",
+    "fr": "Sauvegarde impossible. Vérifiez l’espace disque et les permissions.",
+    "de": "Speichern fehlgeschlagen. Prüfe Speicherplatz und Zugriffsrechte.",
+    "it": "Salvataggio non riuscito. Controlla spazio e permessi.",
+    "ja": "保存できませんでした。空き容量とアクセス権を確認してください。"
+  },
+  "save_recovered": {
+    "en": "The save could not be read. Default settings were loaded.",
+    "es": "No se pudo leer la partida. Se cargaron los ajustes predeterminados.",
+    "fr": "La sauvegarde est illisible. Paramètres par défaut chargés.",
+    "de": "Spielstand nicht lesbar. Standardeinstellungen wurden geladen.",
+    "it": "Impossibile leggere il salvataggio. Caricate le impostazioni predefinite.",
+    "ja": "保存データを読み込めませんでした。初期設定を使用します。"
+  }
+}

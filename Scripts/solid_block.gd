@@ -12,6 +12,8 @@ func on_projectile_hit(_attacker: Node2D) -> void:
 
 
 func flash_hit() -> void:
+	GameServices.play_sound("hit")
+	GameServices.record_event("hit")
 	if flash_tween:
 		flash_tween.kill()
 	$Sprite2D.modulate = Color(1.0, 0.55, 0.35)
